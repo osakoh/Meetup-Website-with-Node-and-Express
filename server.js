@@ -6,6 +6,13 @@ const app = express();
 // port
 const port = 3000;
 
+// set up ejs template engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './views'));
+
+// show when code is saved
+console.log('\nRestarting server\n');
+
 // middleware to serve static files
 app.use(express.static(path.join(__dirname, './static')));
 
