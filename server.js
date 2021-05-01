@@ -11,20 +11,15 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
 
 // show when code is saved
-console.log('\nRestarting server\n');
+// console.log('\nRestarting server\n');
 
 // middleware to serve static files
 app.use(express.static(path.join(__dirname, './static')));
 
-// home route
-app.get('/', (request, response) => {
-  response.sendFile(path.join(__dirname, './static/index.html'));
-});
-
-// speakers route
-app.get('/speakers', (request, response) => {
-  response.sendFile(path.join(__dirname, './static/speakers.html'));
-});
+// // middleware for routing: speakers route
+// app.get('/speakers', (request, response) => {
+//   response.sendFile(path.join(__dirname, './static/speakers.html'));
+// });
 
 app.listen(port, () => {
   console.log(`Express server listening on port ${port}.....`);
