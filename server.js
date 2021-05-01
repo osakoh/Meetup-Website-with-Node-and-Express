@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 
+const routes = require('./routes');
+
 const app = express();
 
 // port
@@ -15,6 +17,9 @@ app.set('views', path.join(__dirname, './views'));
 
 // middleware to serve static files
 app.use(express.static(path.join(__dirname, './static')));
+
+// listen for all routes associated with the index page(/)
+app.use('/', routes());
 
 // // middleware for routing: speakers route
 // app.get('/speakers', (request, response) => {
